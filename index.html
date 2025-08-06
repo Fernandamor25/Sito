@@ -27,24 +27,23 @@
     header {
       background-color: #fff;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
       padding: 15px 30px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     .logo-section {
-  background-color: transparent; /* rimosso sfondo blu */
-  text-align: center;
-  padding: 60px 20px 40px;
-}
+      background-color: transparent; /* rimosso sfondo blu */
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
 
-.logo-img {
-  max-width: 300px;
-  height: auto;
-  opacity: 0.95;
-}
-
+    .logo-img {
+      max-width: 300px;
+      height: auto;
+      opacity: 0.95;
+      display: inline-block;
     }
 
     .language-switch select {
@@ -136,8 +135,8 @@
   </header>
 
   <div class="logo-section">
-  <img src="logo.png" alt="Logo MFL" class="logo.png" />
-</div>
+    <img src="logo.png" alt="Logo MFL" class="logo-img" />
+  </div>
 
   <!-- Sezione Hero con foto e nome -->
   <main>
@@ -204,4 +203,3 @@
 
 </body>
 </html>
-
