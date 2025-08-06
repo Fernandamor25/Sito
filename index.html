@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -33,8 +32,17 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    .logo img {
-      height: 60px;
+    .logo-section {
+      background-color: var(--primary-color);
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .logo-section h1 {
+      color: white;
+      font-size: 40px;
+      margin: 0;
+      letter-spacing: 3px;
     }
 
     .language-switch select {
@@ -54,12 +62,6 @@
       border-radius: 50%;
       object-fit: cover;
       border: 4px solid var(--accent-color);
-    }
-
-    h1 {
-      font-size: 32px;
-      color: var(--primary-color);
-      margin-top: 20px;
     }
 
     h2 {
@@ -102,7 +104,8 @@
     .prenotazione iframe {
       border: none;
       width: 100%;
-      min-height: 600px;
+      height: 700px;
+      border-radius: 8px;
     }
 
     footer {
@@ -121,9 +124,6 @@
 <body>
 
   <header>
-    <div class="logo">
-      <img src="Image1.png" alt="Logo MFL" />
-    </div>
     <div class="language-switch">
       <select id="language-select">
         <option value="it">Italiano</option>
@@ -133,13 +133,20 @@
     </div>
   </header>
 
+  <!-- Logo esteso al centro -->
+  <div class="logo-section">
+    <h1>MFL</h1>
+  </div>
+
+  <!-- Sezione Hero con foto e nome -->
   <main>
     <section class="hero">
       <img src="IMG_7230.jpeg" alt="Foto della Dott.ssa Maria Fernanda Lopez" class="profile-photo" />
-      <h1 data-it="Dott.ssa Maria Fernanda Lopez" data-en="Dr. Maria Fernanda Lopez" data-es="Dra. Maria Fernanda Lopez">Dott.ssa Maria Fernanda Lopez</h1>
+      <h2 data-it="Dott.ssa Maria Fernanda Lopez" data-en="Dr. Maria Fernanda Lopez" data-es="Dra. Maria Fernanda Lopez">Dott.ssa Maria Fernanda Lopez</h2>
       <p data-it="Psicologa – Crescita, ascolto, equilibrio" data-en="Psychologist – Growth, empathy, balance" data-es="Psicóloga – Crecimiento, escucha, equilibrio">Psicologa – Crescita, ascolto, equilibrio</p>
     </section>
 
+    <!-- Prestazioni -->
     <section class="prestazioni">
       <h2 data-it="Prestazioni e Percorsi Terapeutici" data-en="Services and Therapy Paths" data-es="Servicios y Procesos Terapéuticos">Prestazioni e Percorsi Terapeutici</h2>
       <ul>
@@ -149,48 +156,34 @@
       </ul>
 
       <div id="ansia">
-        <h3 data-it="Gestione dell'Ansia" data-en="Anxiety Management" data-es="Manejo de la Ansiedad">Gestione dell'Ansia</h3>
-        <p data-it="Percorso per comprendere e ridurre l'ansia quotidiana con tecniche cognitive e di rilassamento." 
-           data-en="Path to understand and reduce daily anxiety using cognitive and relaxation techniques."
-           data-es="Proceso para comprender y reducir la ansiedad diaria con técnicas cognitivas y de relajación.">
-           Percorso per comprendere e ridurre l'ansia quotidiana con tecniche cognitive e di rilassamento.
-        </p>
+        <h3>Gestione dell'Ansia</h3>
+        <p>Percorso per comprendere e ridurre l'ansia quotidiana con tecniche cognitive e di rilassamento.</p>
       </div>
 
       <div id="depressione">
-        <h3 data-it="Percorso contro la Depressione" data-en="Depression Support Path" data-es="Proceso contra la Depresión">Percorso contro la Depressione</h3>
-        <p data-it="Supporto psicologico per affrontare stati depressivi e riscoprire le proprie risorse personali."
-           data-en="Psychological support to face depressive states and rediscover personal resources."
-           data-es="Apoyo psicológico para enfrentar estados depresivos y redescubrir recursos personales.">
-           Supporto psicologico per affrontare stati depressivi e riscoprire le proprie risorse personali.
-        </p>
+        <h3>Percorso contro la Depressione</h3>
+        <p>Supporto psicologico per affrontare stati depressivi e riscoprire le proprie risorse personali.</p>
       </div>
 
       <div id="autostima">
-        <h3 data-it="Sviluppo dell’Autostima" data-en="Self-Esteem Development" data-es="Desarrollo de la Autoestima">Sviluppo dell’Autostima</h3>
-        <p data-it="Aiuto per riconoscere il proprio valore e costruire fiducia in sé stessi."
-           data-en="Support in recognizing self-worth and building confidence."
-           data-es="Ayuda para reconocer el propio valor y construir confianza en uno mismo.">
-           Aiuto per riconoscere il proprio valore e costruire fiducia in sé stessi.
-        </p>
+        <h3>Sviluppo dell’Autostima</h3>
+        <p>Aiuto per riconoscere il proprio valore e costruire fiducia in sé stessi.</p>
       </div>
     </section>
 
+    <!-- Contatti -->
     <section class="contatti">
-      <h2 data-it="Contatti" data-en="Contact" data-es="Contacto">Contatti</h2>
+      <h2>Contatti</h2>
       <p>Email: <a href="mailto:lmariafernanda974@gmail.com">lmariafernanda974@gmail.com</a></p>
-      <p>Telefono: <a href="tel:+54 56-9476">+54 93804569476</a></p>
+      <p>Telefono: <a href="tel:+5493804569476">+54 93804569476</a></p>
       <p>Studio: On-line, Milano</p>
     </section>
 
+    <!-- Prenotazione -->
     <section class="prenotazione" id="prenota">
-      <h2 data-it="Prenota un Appuntamento" data-en="Book an Appointment" data-es="Reserva una Cita">Prenota un Appuntamento</h2>
-      <iframe src="https://calendly.com/" title="Calendario appuntamenti" onload="showThankYou()"></iframe>
-    </section>
-
-    <section class="hidden" id="grazie">
-      <h2 data-it="Grazie per aver prenotato!" data-en="Thank you for booking!" data-es="¡Gracias por reservar!">Grazie per aver prenotato!</h2>
-      <p data-it="Riceverai una conferma via email." data-en="You will receive a confirmation by email." data-es="Recibirás una confirmación por correo electrónico.">Riceverai una conferma via email.</p>
+      <h2>Prenota un Appuntamento</h2>
+      <p>Seleziona il giorno e l’orario per prenotare una consulenza online. Riceverai una e-mail di conferma.</p>
+      <iframe src="https://calendly.com/tuo-nomeutente/50min" title="Calendario appuntamenti"></iframe>
     </section>
   </main>
 
@@ -206,14 +199,6 @@
         el.innerText = el.getAttribute('data-' + lang);
       });
     });
-
-    function showThankYou() {
-      setTimeout(() => {
-        const thanks = document.getElementById('grazie');
-        thanks.classList.remove('hidden');
-        thanks.scrollIntoView({ behavior: 'smooth' });
-      }, 3000);
-    }
   </script>
 
 </body>
