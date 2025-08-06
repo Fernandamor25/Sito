@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -19,17 +18,32 @@
       margin: 0;
       padding: 0;
       font-family: var(--font-family);
+      background-color: var(--light-bg);
       color: #333;
       line-height: 1.6;
 
-      /* Filigrana del logo */
+      /* FILIGRANA */
       background-image: url('Image1.png');
       background-repeat: no-repeat;
       background-position: center center;
-      background-attachment: fixed;
-      background-size: 40%; /* puoi cambiare la dimensione della filigrana */
-      background-color: var(--light-bg);
+      background-size: contain;
       opacity: 1;
+    }
+
+    /* Sovrapposizione trasparente per effetto filigrana */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 100vw;
+      height: 100vh;
+      background: url('Image1.png') no-repeat center center;
+      background-size: contain;
+      opacity: 0.05;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      pointer-events: none;
     }
 
     header {
@@ -39,6 +53,8 @@
       align-items: center;
       padding: 15px 30px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1;
     }
 
     .language-switch select {
@@ -50,6 +66,8 @@
       text-align: center;
       padding: 50px 20px;
       background-color: var(--hero-bg);
+      position: relative;
+      z-index: 1;
     }
 
     .profile-photo {
@@ -75,8 +93,8 @@
       padding: 40px 20px;
       max-width: 800px;
       margin: auto;
-      background-color: rgba(255, 255, 255, 0.9); /* leggero sfondo per leggibilità */
-      border-radius: 8px;
+      position: relative;
+      z-index: 1;
     }
 
     .prestazioni ul {
@@ -112,6 +130,8 @@
       text-align: center;
       padding: 20px;
       font-size: 14px;
+      position: relative;
+      z-index: 1;
     }
 
     .hidden {
@@ -131,69 +151,8 @@
     </div>
   </header>
 
-  <!-- Sezione Hero -->
+  <!-- RIMOSSA .logo-section: il logo ora è la filigrana -->
+
   <main>
     <section class="hero">
-      <img src="IMG_7230.jpeg" alt="Foto della Dott.ssa Maria Fernanda Lopez" class="profile-photo" />
-      <h2 data-it="Dott.ssa Maria Fernanda Lopez" data-en="Dr. Maria Fernanda Lopez" data-es="Dra. Maria Fernanda Lopez">Dott.ssa Maria Fernanda Lopez</h2>
-      <p data-it="Psicologa – Crescita, ascolto, equilibrio" data-en="Psychologist – Growth, empathy, balance" data-es="Psicóloga – Crecimiento, escucha, equilibrio">Psicologa – Crescita, ascolto, equilibrio</p>
-    </section>
-
-    <!-- Prestazioni -->
-    <section class="prestazioni">
-      <h2 data-it="Prestazioni e Percorsi Terapeutici" data-en="Services and Therapy Paths" data-es="Servicios y Procesos Terapéuticos">Prestazioni e Percorsi Terapeutici</h2>
-      <ul>
-        <li><a href="#ansia">Gestione dell'Ansia</a></li>
-        <li><a href="#depressione">Percorso contro la Depressione</a></li>
-        <li><a href="#autostima">Sviluppo dell’Autostima</a></li>
-      </ul>
-
-      <div id="ansia">
-        <h3>Gestione dell'Ansia</h3>
-        <p>Percorso per comprendere e ridurre l'ansia quotidiana con tecniche cognitive e di rilassamento.</p>
-      </div>
-
-      <div id="depressione">
-        <h3>Percorso contro la Depressione</h3>
-        <p>Supporto psicologico per affrontare stati depressivi e riscoprire le proprie risorse personali.</p>
-      </div>
-
-      <div id="autostima">
-        <h3>Sviluppo dell’Autostima</h3>
-        <p>Aiuto per riconoscere il proprio valore e costruire fiducia in sé stessi.</p>
-      </div>
-    </section>
-
-    <!-- Contatti -->
-    <section class="contatti">
-      <h2>Contatti</h2>
-      <p>Email: <a href="mailto:lmariafernanda974@gmail.com">lmariafernanda974@gmail.com</a></p>
-      <p>Telefono: <a href="tel:+5493804569476">+54 93804569476</a></p>
-      <p>Studio: On-line, Milano</p>
-    </section>
-
-    <!-- Prenotazione -->
-    <section class="prenotazione" id="prenota">
-      <h2>Prenota un Appuntamento</h2>
-      <p>Seleziona il giorno e l’orario per prenotare una consulenza online. Riceverai una e-mail di conferma.</p>
-      <iframe src="https://calendly.com/tuo-nomeutente/50min" title="Calendario appuntamenti"></iframe>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Dott.ssa Maria Fernanda Lopez - Tutti i diritti riservati</p>
-  </footer>
-
-  <script>
-    document.getElementById('language-select').addEventListener('change', function () {
-      const lang = this.value;
-      const elements = document.querySelectorAll('[data-' + lang + ']');
-      elements.forEach(el => {
-        el.innerText = el.getAttribute('data-' + lang);
-      });
-    });
-  </script>
-
-</body>
-</html>
-
+      <img src="IMG_7230.jp_
