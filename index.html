@@ -4,96 +4,202 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dott.ssa Maria Fernanda Lopez</title>
-  <meta name="description" content="Psicologa specializzata in percorsi terapeutici. Studio online e in presenza. Prenota una seduta.">
-
+  <meta name="description" content="Psicologa specializzata in percorsi terapeutici per ansia, depressione e autostima. Studio a Roma. Prenota online.">
   <style>
-    /* Reset base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --primary-color: #2d4f6f;
+      --accent-color: #336699;
+      --light-bg: #f9f9f9;
+      --hero-bg: #eaf0f6;
+      --font-family: 'Georgia', serif;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background-color: white;
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-family);
+      background-color: var(--light-bg);
+      color: #333;
+      line-height: 1.6;
     }
 
-    /* Selettore lingua in alto a destra */
-    .language-selector {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 16px;
-      font-weight: bold;
-      z-index: 1000;
-    }
-
-    .italiano {
-      color: green;
-    }
-
-    .inglese {
-      color: blue;
-    }
-
-    .spagnolo {
-      color: red;
-    }
-
-    /* Sezione iniziale con logo */
-    .hero-section {
+    header {
+      background-color: #fff;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      background-color: transparent;
-      padding: 120px 20px 80px;
-      height: auto;
-      position: relative;
+      padding: 15px 30px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    .logo-img {
-      max-width: 300px;
-      height: auto;
-      opacity: 0.95;
-    }
-
-    /* Altre sezioni placeholder (es. prestazioni, contatti, ecc.) */
-    .content-section {
-      padding: 60px 20px;
+    .logo-section {
+      background-color: var(--primary-color);
       text-align: center;
+      padding: 40px 20px;
     }
 
-    .content-section h2 {
-      font-size: 28px;
+    .logo-section h1 {
+      color: white;
+      font-size: 40px;
+      margin: 0;
+      letter-spacing: 3px;
+    }
+
+    .language-switch select {
+      padding: 6px;
+      font-size: 14px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background-color: var(--hero-bg);
+    }
+
+    .profile-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--accent-color);
+    }
+
+    h2 {
+      color: var(--primary-color);
+      font-size: 24px;
       margin-bottom: 20px;
     }
 
-    .content-section p {
-      font-size: 18px;
-      line-height: 1.6;
+    h3 {
+      margin-top: 30px;
+      color: var(--accent-color);
+    }
+
+    main section {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .prestazioni ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .prestazioni li {
+      margin-bottom: 10px;
+    }
+
+    .prestazioni a {
+      color: var(--accent-color);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .contatti a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    .prenotazione iframe {
+      border: none;
+      width: 100%;
+      height: 700px;
+      border-radius: 8px;
+    }
+
+    footer {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    .hidden {
+      display: none;
     }
   </style>
 </head>
 <body>
 
-  <!-- Selettore lingua -->
-  <div class="language-selector">
-    <span class="italiano">Italiano</span> |
-    <span class="inglese">English</span> |
-    <span class="spagnolo">Español</span>
+  <header>
+    <div class="language-switch">
+      <select id="language-select">
+        <option value="it">Italiano</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+      </select>
+    </div>
+  </header>
+
+  <!-- Logo esteso al centro -->
+  <div class="logo-section">
+    <h1>MFL</h1>
   </div>
 
-  <!-- Sezione logo trasparente -->
-  <section class="hero-section">
-    <img src="logo.png" alt="logo.png" class="logo.png" />
-  </section>
+  <!-- Sezione Hero con foto e nome -->
+  <main>
+    <section class="hero">
+      <img src="IMG_7230.jpeg" alt="Foto della Dott.ssa Maria Fernanda Lopez" class="profile-photo" />
+      <h2 data-it="Dott.ssa Maria Fernanda Lopez" data-en="Dr. Maria Fernanda Lopez" data-es="Dra. Maria Fernanda Lopez">Dott.ssa Maria Fernanda Lopez</h2>
+      <p data-it="Psicologa – Crescita, ascolto, equilibrio" data-en="Psychologist – Growth, empathy, balance" data-es="Psicóloga – Crecimiento, escucha, equilibrio">Psicologa – Crescita, ascolto, equilibrio</p>
+    </section>
 
-  <!-- Sezione placeholder per contenuti -->
-  <section class="content-section">
-    <h2>Benvenuti</h2>
-    <p>Qui puoi aggiungere la descrizione delle prestazioni terapeutiche, il sistema di prenotazione e altre informazioni utili.</p>
-  </section>
+    <!-- Prestazioni -->
+    <section class="prestazioni">
+      <h2 data-it="Prestazioni e Percorsi Terapeutici" data-en="Services and Therapy Paths" data-es="Servicios y Procesos Terapéuticos">Prestazioni e Percorsi Terapeutici</h2>
+      <ul>
+        <li><a href="#ansia">Gestione dell'Ansia</a></li>
+        <li><a href="#depressione">Percorso contro la Depressione</a></li>
+        <li><a href="#autostima">Sviluppo dell’Autostima</a></li>
+      </ul>
+
+      <div id="ansia">
+        <h3>Gestione dell'Ansia</h3>
+        <p>Percorso per comprendere e ridurre l'ansia quotidiana con tecniche cognitive e di rilassamento.</p>
+      </div>
+
+      <div id="depressione">
+        <h3>Percorso contro la Depressione</h3>
+        <p>Supporto psicologico per affrontare stati depressivi e riscoprire le proprie risorse personali.</p>
+      </div>
+
+      <div id="autostima">
+        <h3>Sviluppo dell’Autostima</h3>
+        <p>Aiuto per riconoscere il proprio valore e costruire fiducia in sé stessi.</p>
+      </div>
+    </section>
+
+    <!-- Contatti -->
+    <section class="contatti">
+      <h2>Contatti</h2>
+      <p>Email: <a href="mailto:lmariafernanda974@gmail.com">lmariafernanda974@gmail.com</a></p>
+      <p>Telefono: <a href="tel:+5493804569476">+54 93804569476</a></p>
+      <p>Studio: On-line, Milano</p>
+    </section>
+
+    <!-- Prenotazione -->
+    <section class="prenotazione" id="prenota">
+      <h2>Prenota un Appuntamento</h2>
+      <p>Seleziona il giorno e l’orario per prenotare una consulenza online. Riceverai una e-mail di conferma.</p>
+      <iframe src="https://calendly.com/tuo-nomeutente/50min" title="Calendario appuntamenti"></iframe>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Dott.ssa Maria Fernanda Lopez - Tutti i diritti riservati</p>
+  </footer>
+
+  <script>
+    document.getElementById('language-select').addEventListener('change', function () {
+      const lang = this.value;
+      const elements = document.querySelectorAll('[data-' + lang + ']');
+      elements.forEach(el => {
+        el.innerText = el.getAttribute('data-' + lang);
+      });
+    });
+  </script>
 
 </body>
 </html>
